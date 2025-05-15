@@ -2,11 +2,30 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Hello World!</title>
+    <title>Ohana Notes!</title>
 
   </head>
   <body>
-    <h1>💖 Hello World!</h1>
-    <p>Welcome to your Electron application.</p>
+    <div class="upper">
+      <div class="upper-left">
+        <div class="date-time">
+          <div class="day" id="current-day"></div>
+          <div class="date"id="current-date"></div>
+          <div class="month" id="current-month"></div>
+        </div>
+      </div>
+      <div class="upper-right">
+        <div class="progress"></div>
+      </div>
+    </div>
+    <div class="lower">
+        <div class="add-note">
+            <input class="addNote" id="noteInput" placeholder="Add a quick note">
+            <button type="submit" class="AddNote" id="addNoteBtn">+</button>
+        </div>
+        <div class="notes-container" id="notesContainer">
+            <!-- Notes will be added here -->
+        </div>
+    </div>
   </body>
 </html>
