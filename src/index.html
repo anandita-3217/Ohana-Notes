@@ -1,22 +1,32 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html data-theme="light">
+<head>
     <meta charset="UTF-8" />
-    <title>Ohana Notes!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lilo & Stitch Notes App</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    
+    <label class="switch">
+  <input type="checkbox" />
+  <span class="slider"></span>
+  <span class="clouds_stars"></span>
+</label>
 
-  </head>
-  <body>
     <div class="upper">
-      <div class="upper-left">
-        <div class="date-time">
-          <div class="day" id="current-day"></div>
-          <div class="date"id="current-date"></div>
-          <div class="month" id="current-month"></div>
+        <div class="upper-left">
+            <div class="date-time">
+                <div class="day" id="current-day"></div>
+                <div class="date" id="current-date"></div>
+                <div class="month" id="current-month"></div>
+            </div>
         </div>
-      </div>
-      <div class="upper-right">
-        <div class="progress"></div>
-      </div>
+        <div class="upper-right">
+            <div class="progress">
+                <!-- Add progress content here -->
+            </div>
+        </div>
     </div>
     <div class="lower">
         <div class="add-note">
@@ -27,5 +37,6 @@
             <!-- Notes will be added here -->
         </div>
     </div>
-  </body>
+    <script src="renderer.js"></script>
+</body>
 </html>

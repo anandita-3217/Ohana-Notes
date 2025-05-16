@@ -1,35 +1,24 @@
-/**
- * This file will automatically be loaded by webpack and run in the "renderer" context.
- * To learn more about the differences between the "main" and the "renderer" context in
- * Electron, visit:
- *
- * https://electronjs.org/docs/tutorial/process-model
- *
- * By default, Node.js integration in this file is disabled. When enabling Node.js integration
- * in a renderer process, please be aware of potential security implications. You can read
- * more about security risks here:
- *
- * https://electronjs.org/docs/tutorial/security
- *
- * To enable Node.js integration in this file, open up `main.js` and enable the `nodeIntegration`
- * flag:
- *
- * ```
- *  // Create the browser window.
- *  mainWindow = new BrowserWindow({
- *    width: 800,
- *    height: 600,
- *    webPreferences: {
- *      nodeIntegration: true
- *    }
- *  });
- * ```
- */
+// Theme functionality
+// function initTheme() {
+//     const savedTheme = localStorage.getItem('stitchTheme') || 'light';
+//     setTheme(savedTheme);
+// }
 
-import './index.css';
+// function setTheme(theme) {
+//     document.documentElement.setAttribute('data-theme', theme);
+//     localStorage.setItem('stitchTheme', theme);
+    
+//     const themeToggle = document.getElementById('themeToggle');
+//     themeToggle.checked = theme === 'dark';
+// }
 
-// console.log('👋 This message is being logged by "renderer.js", included via webpack');
+// function toggleTheme() {
+//     const currentTheme = document.documentElement.getAttribute('data-theme');
+//     const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+//     setTheme(newTheme);
+// }
 
+// Date and time functionality
 function updateDate() {
     const now = new Date();
     
@@ -99,8 +88,8 @@ function addNote() {
     showSuccessAnimation();
 }
 
-// Delete a note
-function deleteNote(id) {
+// Make deleteNote global so it can be called from HTML onclick
+window.deleteNote = function(id) {
     notes = notes.filter(note => note.id !== id);
     saveNotes();
     renderNotes();
@@ -152,6 +141,9 @@ function showSuccessAnimation() {
 
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize theme
+    initTheme();
+    
     // Update date immediately
     updateDate();
     
@@ -164,8 +156,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add event listeners
     const addButton = document.getElementById('addNoteBtn');
     const noteInput = document.getElementById('noteInput');
+    const themeToggle = document.getElementById('themeToggle');
     
     addButton.addEventListener('click', addNote);
+    themeToggle.addEventListener('change', toggleTheme);
     
     // Add note on Enter key
     noteInput.addEventListener('keypress', (e) => {
