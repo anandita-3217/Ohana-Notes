@@ -1,3 +1,86 @@
+// // module.exports = [
+// //   // Add support for native node modules
+// //   {
+// //     // We're specifying native_modules in the test because the asset relocator loader generates a
+// //     // "fake" .node file which is really a cjs file.
+// //     test: /native_modules[/\\].+\.node$/,
+// //     use: 'node-loader',
+// //   },
+// //   {
+// //     test: /[/\\]node_modules[/\\].+\.(m?js|node)$/,
+// //     parser: { amd: false },
+// //     use: {
+// //       loader: '@vercel/webpack-asset-relocator-loader',
+// //       options: {
+// //         outputAssetBase: 'native_modules',
+// //       },
+// //     },
+// //   },
+//   // Put your webpack loader rules in this array.  This is where you would put
+//   // your ts-loader configuration for instance:
+//   /**
+//    * Typescript Example:
+//    *
+//    * {
+//    *   test: /\.tsx?$/,
+//    *   exclude: /(node_modules|.webpack)/,
+//    *   loaders: [{
+//    *     loader: 'ts-loader',
+//    *     options: {
+//    *       transpileOnly: true
+//    *     }
+//    *   }]
+//    * }
+//    */
+// // ];
+// module.exports = [
+//   // Add support for native node modules
+//   {
+//     // We're specifying native_modules in the test because the asset relocator loader generates a
+//     // "fake" .node file which is really a cjs file.
+//     test: /native_modules[/\\].+\.node$/,
+//     use: 'node-loader',
+//   },
+//   {
+//     test: /[/\\]node_modules[/\\].+\.(m?js|node)$/,
+//     parser: { amd: false },
+//     use: {
+//       loader: '@vercel/webpack-asset-relocator-loader',
+//       options: {
+//         outputAssetBase: 'native_modules',
+//       },
+//     },
+//   },
+//   {
+//     test: /\.tsx?$/,
+//     exclude: /(node_modules|\.webpack)/,
+//     use: {
+//       loader: 'ts-loader',
+//       options: {
+//         transpileOnly: true,
+//       },
+//     },
+//   },
+//   // Add support for image files
+//   {
+//     test: /\.(png|jpg|jpeg|gif|svg)$/i,
+//     type: 'asset',
+//     parser: {
+//       dataUrlCondition: {
+//         maxSize: 8 * 1024, // 8kb
+//       },
+//     },
+//     generator: {
+//       filename: 'assets/images/[name][ext]',
+//     },
+//   },
+//   // Add support for CSS files
+//   {
+//     test: /\.css$/,
+//     use: ['style-loader', 'css-loader'],
+//   },
+// ];
+
 module.exports = [
   // Add support for native node modules
   {
@@ -16,20 +99,27 @@ module.exports = [
       },
     },
   },
-  // Put your webpack loader rules in this array.  This is where you would put
-  // your ts-loader configuration for instance:
-  /**
-   * Typescript Example:
-   *
-   * {
-   *   test: /\.tsx?$/,
-   *   exclude: /(node_modules|.webpack)/,
-   *   loaders: [{
-   *     loader: 'ts-loader',
-   *     options: {
-   *       transpileOnly: true
-   *     }
-   *   }]
-   * }
-   */
+  {
+    test: /\.tsx?$/,
+    exclude: /(node_modules|\.webpack)/,
+    use: {
+      loader: 'ts-loader',
+      options: {
+        transpileOnly: true,
+      },
+    },
+  },
+  // Add support for image files
+  {
+    test: /\.(png|jpg|jpeg|gif|svg)$/i,
+    type: 'asset',
+    parser: {
+      dataUrlCondition: {
+        maxSize: 8 * 1024, // 8kb
+      },
+    },
+    generator: {
+      filename: 'assets/images/[name][ext]',
+    },
+  },
 ];

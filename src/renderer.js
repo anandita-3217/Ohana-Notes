@@ -1,22 +1,26 @@
+import './index.css';
+import stitchIcon from './assets/images/stitch-icon.png';
+
+
 // Theme functionality
-// function initTheme() {
-//     const savedTheme = localStorage.getItem('stitchTheme') || 'light';
-//     setTheme(savedTheme);
-// }
+function initTheme() {
+    const savedTheme = localStorage.getItem('stitchTheme') || 'light';
+    setTheme(savedTheme);
+}
 
-// function setTheme(theme) {
-//     document.documentElement.setAttribute('data-theme', theme);
-//     localStorage.setItem('stitchTheme', theme);
+function setTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('stitchTheme', theme);
     
-//     const themeToggle = document.getElementById('themeToggle');
-//     themeToggle.checked = theme === 'dark';
-// }
+    const themeToggle = document.getElementById('themeToggle');
+    themeToggle.checked = theme === 'dark';
+}
 
-// function toggleTheme() {
-//     const currentTheme = document.documentElement.getAttribute('data-theme');
-//     const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-//     setTheme(newTheme);
-// }
+function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+}
 
 // Date and time functionality
 function updateDate() {

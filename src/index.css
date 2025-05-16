@@ -195,13 +195,13 @@ body {
     box-shadow: 0 8px 16px var(--shadow);
     text-align: center;
     min-width: 180px;
-    transition: transform 0.3s ease;
+    /* transition: transform 0.3s ease; */
 }
 
-.date-time:hover {
+/* .date-time:hover {
     transform: translateY(-2px);
     box-shadow: 0 12px 20px var(--shadow-hover);
-}
+} */
 
 .day {
     font-size: 20px;
@@ -352,7 +352,7 @@ body {
 }
 
 /* Add stitch character decoration (optional) */
-.upper::after {
+/* .upper::after {
     content: '';
     position: absolute;
     bottom: -40px;
@@ -364,4 +364,4 @@ body {
     background-repeat: no-repeat;
     opacity: 0.7;
     pointer-events: none;
-}
+} */

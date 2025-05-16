@@ -3,17 +3,23 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lilo & Stitch Notes App</title>
+    <title>Ohana Notes</title>
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="logo-container">
+                <img src="" alt="Stitch" class="logo">
+                <h1>Ohana Notes</h1>
+            </div>
+            <label class="switch">
+                <input type="checkbox" id="themeToggle" />
+                    <span class="slider"></span>
+                    <span class="clouds_stars"></span>
+            </label>
+        </header>
     
-    <label class="switch">
-  <input type="checkbox" />
-  <span class="slider"></span>
-  <span class="clouds_stars"></span>
-</label>
-
     <div class="upper">
         <div class="upper-left">
             <div class="date-time">
@@ -38,5 +44,6 @@
         </div>
     </div>
     <script src="renderer.js"></script>
+    </div>
 </body>
 </html>
