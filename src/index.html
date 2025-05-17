@@ -4,14 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ohana Notes</title>
-    <link rel="stylesheet" href="index.css">
+    <!-- <link rel="stylesheet" href="index.css"> -->
 </head>
 <body>
     <div class="app-container">
         <header class="app-header">
             <div class="logo-container">
-                <img src="" alt="Stitch" class="logo">
-                <h1>Ohana Notes</h1>
+                <!-- <img src="" alt="Stitch" class="logo">
+                <h1>Ohana Notes</h1> -->
             </div>
             <label class="switch">
                 <input type="checkbox" id="themeToggle" />
@@ -30,7 +30,50 @@
         </div>
         <div class="upper-right">
             <div class="progress">
-                <!-- Add progress content here -->
+                <!-- Progress bar HTML structure -->
+<div class="progress-title">
+    <span>Today's Progress</span>
+    <span class="completed-tasks">3/7 tasks</span>
+</div>
+
+<div class="progress-bar-container">
+    <div class="progress-bar" style="width: 42%;"></div>
+</div>
+
+<div class="task-categories">
+    <div class="category">
+        <span class="category-icon">📝</span>
+        <span>Notes</span>
+    </div>
+    <div class="category">
+        <span class="category-icon">📌</span>
+        <span>Tasks</span>
+    </div>
+    <div class="category">
+        <span class="category-icon">⭐</span>
+        <span>Important</span>
+    </div>
+</div>
+
+<div class="stats">
+    <div class="stat-item">
+        <div class="stat-value">7</div>
+        <div class="stat-label">Total Tasks</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-value">3</div>
+        <div class="stat-label">Completed</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-value">4</div>
+        <div class="stat-label">Remaining</div>
+    </div>
+</div>
+
+<div class="daily-quote">
+    "Ohana means family. Family means nobody gets left behind or forgotten."
+</div>
+
             </div>
         </div>
     </div>
