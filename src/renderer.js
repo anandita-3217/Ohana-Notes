@@ -239,7 +239,33 @@ function updateDate() {
     document.getElementById('current-day').textContent = currentDay;
     document.getElementById('current-date').textContent = currentDate;
     document.getElementById('current-month').textContent = currentMonth;
+    updateClock();
+
 }
+function updateClock() {
+    const now = new Date();
+    let hours = now.getHours();
+    let minutes = now.getMinutes();
+    let seconds = now.getSeconds();
+    
+    // Add leading zeros
+    hours = hours < 10 ? '0' + hours : hours;
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+    
+    // Format time string
+    const timeString = `${hours}:${minutes}:${seconds}`;
+    
+    // Update clock element
+    const clockElement = document.getElementById('digital-clock');
+    if (clockElement) {
+        clockElement.textContent = timeString;
+    }
+    
+    // Update every second
+    setTimeout(updateClock, 1000);
+}
+
 
 // Notes and Tasks functionality
 let notes = [];
