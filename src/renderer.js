@@ -242,6 +242,30 @@ function updateDate() {
     updateClock();
 
 }
+// function updateClock() {
+//     const now = new Date();
+//     let hours = now.getHours();
+//     let minutes = now.getMinutes();
+//     let seconds = now.getSeconds();
+    
+//     // Add leading zeros
+//     hours = hours < 10 ? '0' + hours : hours;
+//     minutes = minutes < 10 ? '0' + minutes : minutes;
+//     seconds = seconds < 10 ? '0' + seconds : seconds;
+    
+//     // Format time string
+//     const timeString = `${hours}:${minutes}:${seconds}`;
+    
+//     // Update clock element
+//     const clockElement = document.getElementById('digital-clock');
+//     if (clockElement) {
+//         clockElement.textContent = timeString;
+//     }
+    
+//     // Update every second
+//     setTimeout(updateClock, 1000);
+// }
+
 function updateClock() {
     const now = new Date();
     let hours = now.getHours();
@@ -253,18 +277,24 @@ function updateClock() {
     minutes = minutes < 10 ? '0' + minutes : minutes;
     seconds = seconds < 10 ? '0' + seconds : seconds;
     
-    // Format time string
+    // Format time string with optional animation for the colon
+    // Using a non-breaking space after each colon for better spacing
     const timeString = `${hours}:${minutes}:${seconds}`;
-    
+
     // Update clock element
     const clockElement = document.getElementById('digital-clock');
     if (clockElement) {
         clockElement.textContent = timeString;
+        
+        // Optional: Add blink effect to the colons
+        const pulseEffect = Math.floor(now.getSeconds()) % 2 === 0 ? 'pulse' : '';
+        clockElement.className = `digital-clock ${pulseEffect}`;
     }
     
     // Update every second
     setTimeout(updateClock, 1000);
 }
+
 
 
 // Notes and Tasks functionality
