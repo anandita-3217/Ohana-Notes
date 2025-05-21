@@ -706,3 +706,5 @@ module.exports = {
 // user says completed task on;y then is the task complete and the progress increases.
 // allow u to make tasks for future date by  clicking on the date-div open a calendar modal and choose the date on which you want to create the task.
 // make a digital clock under the the date of the date div
+
+// Im trying i really am thisis just to maintain mystreak :(
