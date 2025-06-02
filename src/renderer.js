@@ -87,8 +87,6 @@ let tasks = {
     }
 };
 
-// Quotes for daily inspiration
-
 
 // Load notes from localStorage
 function loadNotes() {
